@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm --prefix frontend install && npm --prefix frontend run build",
+  "outputDirectory": "frontend/dist",
+  "installCommand": "npm --prefix api install && npm --prefix scripts install",
+  "functions": {
+    "api/*.js": {
+      "memory": 512,
+      "maxDuration": 60
+    }
+  }
+}

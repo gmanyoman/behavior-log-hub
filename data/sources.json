@@ -1,0 +1,25 @@
+{
+  "feeds": [
+    { "name": "우아한형제들 기술블로그", "url": "https://techblog.woowahan.com/feed/", "lang": "ko" },
+    { "name": "카카오 tech", "url": "https://tech.kakao.com/feed/", "lang": "ko" },
+    { "name": "카카오페이 tech", "url": "https://tech.kakaopay.com/rss.xml", "lang": "ko" },
+    { "name": "토스 tech", "url": "https://toss.tech/rss.xml", "lang": "ko" },
+    { "name": "라인 엔지니어링", "url": "https://engineering.linecorp.com/ko/feed", "lang": "ko" },
+    { "name": "네이버 D2", "url": "https://d2.naver.com/d2.atom", "lang": "ko" },
+    { "name": "당근마켓 (Medium)", "url": "https://medium.com/feed/daangn", "lang": "ko" },
+    { "name": "뱅크샐러드", "url": "https://blog.banksalad.com/rss.xml", "lang": "ko" },
+    { "name": "마켓컬리 helloworld", "url": "https://helloworld.kurly.com/index.xml", "lang": "ko" },
+    { "name": "야놀자 tech", "url": "https://yanolja.github.io/index.xml", "lang": "ko" },
+    { "name": "하이퍼커넥트", "url": "https://hyperconnect.github.io/index.xml", "lang": "ko" },
+    { "name": "무신사 tech (Medium)", "url": "https://medium.com/feed/musinsa-tech", "lang": "ko" },
+    { "name": "쿠팡 엔지니어링 (Medium)", "url": "https://medium.com/feed/coupang-engineering", "lang": "en" },
+    { "name": "Medium: product-analytics", "url": "https://medium.com/feed/tag/product-analytics", "lang": "en" },
+    { "name": "Medium: event-tracking", "url": "https://medium.com/feed/tag/event-tracking", "lang": "en" },
+    { "name": "Medium: data-analytics", "url": "https://medium.com/feed/tag/data-analytics", "lang": "en" },
+    { "name": "Medium: amplitude", "url": "https://medium.com/feed/tag/amplitude", "lang": "en" },
+    { "name": "Amplitude Blog", "url": "https://amplitude.com/blog/rss.xml", "lang": "en" },
+    { "name": "Mixpanel Blog", "url": "https://mixpanel.com/blog/feed/", "lang": "en" },
+    { "name": "PostHog Blog", "url": "https://posthog.com/rss.xml", "lang": "en" },
+    { "name": "Segment Blog", "url": "https://segment.com/blog/feed.xml", "lang": "en" }
+  ]
+}

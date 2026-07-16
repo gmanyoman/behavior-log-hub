@@ -1,0 +1,12 @@
+{
+  "name": "behavior-log-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:api": "npm run dev --prefix api",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "refresh": "node scripts/refresh.mjs"
+  }
+}
