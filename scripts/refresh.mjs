@@ -8,16 +8,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
 const DEFAULT_TARGET = path.join(ROOT, 'data/posts.json')
 
-async function readExisting(target) {
-  try {
-    const raw = await readFile(target, 'utf8')
-    const parsed = JSON.parse(raw)
-    return Array.isArray(parsed.posts) ? parsed.posts : []
-  } catch {
-    return []
-  }
-}
-
 function dedupByUrl(posts) {
   const seen = new Map()
   for (const p of posts) {
@@ -38,24 +28,37 @@ function sortNewest(posts) {
   })
 }
 
-export async function refresh({ target = DEFAULT_TARGET, verbose = false } = {}) {
+export async function refreshPayload({ existing = [], verbose = false } = {}) {
   if (verbose) console.log('[refresh] collecting…')
   const { items } = await collect({ verbose })
 
-  if (verbose) console.log(`[refresh] categorizing ${items.length} items…`)
-  const existing = await readExisting(target)
+  if (verbose) console.log(`[refresh] categorizing ${items.length} items (existing=${existing.length})…`)
   const fresh = await categorize(items, { existing, verbose })
 
   const merged = dedupByUrl([...fresh, ...existing])
   const sorted = sortNewest(merged)
-  const payload = {
+  return {
     lastUpdated: new Date().toISOString(),
     posts: sorted,
   }
+}
 
+async function readExisting(target) {
+  try {
+    const raw = await readFile(target, 'utf8')
+    const parsed = JSON.parse(raw)
+    return Array.isArray(parsed.posts) ? parsed.posts : []
+  } catch {
+    return []
+  }
+}
+
+export async function refresh({ target = DEFAULT_TARGET, verbose = false } = {}) {
+  const existing = await readExisting(target)
+  const payload = await refreshPayload({ existing, verbose })
   await mkdir(path.dirname(target), { recursive: true })
   await writeFile(target, JSON.stringify(payload, null, 2))
-  if (verbose) console.log(`[refresh] wrote ${sorted.length} posts → ${target}`)
+  if (verbose) console.log(`[refresh] wrote ${payload.posts.length} posts → ${target}`)
   return payload
 }
 
