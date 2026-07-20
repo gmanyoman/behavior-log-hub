@@ -18,7 +18,9 @@
     "프로덕트 애널리틱스",
     "제품 분석",
     "트래킹",
-    "이벤트 추적"
+    "이벤트 추적",
+    "GA4",
+    "구글 애널리틱스"
   ],
   "en": [
     "event tracking",
@@ -27,6 +29,7 @@
     "event taxonomy",
     "user behavior",
     "user tracking",
+    "user analytics",
     "product analytics",
     "amplitude",
     "mixpanel",
@@ -39,6 +42,9 @@
     "data layer",
     "telemetry",
     "clickstream",
-    "customer data platform"
+    "customer data platform",
+    "ga4",
+    "google analytics",
+    "behavioral analytics"
   ]
 }
